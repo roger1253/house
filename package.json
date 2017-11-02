@@ -1,0 +1,11 @@
+{
+  "name": "@freshes/house",
+  "version": "0.1.0",
+  "description": "House for developing and using freshes components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wu Qi Cheng <wu.qicheng@vitualreaty.com>",
+  "license": "MIT"
+}
