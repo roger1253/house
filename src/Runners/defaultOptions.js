@@ -101,5 +101,10 @@ module.exports = {
    * 是否提交统计报表
    * @type {Boolean}
    */
-  bundleAnalyzerReport: process.env.npm_config_report
+  bundleAnalyzerReport: process.env.npm_config_report,
+
+  /**
+   * 是否启用 human 的 webpack rule 规则
+   */
+  enableHumanRule: true
 }
