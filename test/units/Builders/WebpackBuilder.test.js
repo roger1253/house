@@ -114,4 +114,10 @@ describe('WebpackBuilder.prototype.removeRuleById()', () => {
     const webpack = builder.create()
     expect(webpack.module.rules).toEqual([ { $id: 'robot'} ])
   })
+
+  test('throw error', () => {
+    expect(() => {
+      builder.removeRuleById('human')
+    }).toThrowError('Can\'t find "human" rule')
+  })
 })
