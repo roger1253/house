@@ -1,5 +1,45 @@
 const WebpackBuilder = require('../../../src/Builders/WebpackBuilder')
 
+describe('WebpackBuilder.prototype.merge()', () => {
+  test('merge', () => {
+    const builder = new WebpackBuilder()
+    builder.merge({
+      entry: {
+        app:[ 'main.js', 'polyfill.js' ]
+      }
+    })
+    builder.deepMerge({
+      entry: {
+        app:[ 'main.js' ]
+      }
+    })
+    const webpack = builder.create()
+    expect(webpack.entry).toEqual({
+      app:[ 'main.js' ]
+    })
+  })
+})
+
+describe('WebpackBuilder.prototype.deepMerge()', () => {
+  test('deepMerge', () => {
+    const builder = new WebpackBuilder()
+    builder.merge({
+      entry: {
+        app:[ 'main.js', 'polyfill.js' ]
+      }
+    })
+    builder.deepMerge({
+      entry: {
+        app:[ 'main.js', 'polyfill.js', 'hello.js' ]
+      }
+    })
+    const webpack = builder.create()
+    expect(webpack.entry).toEqual({
+      app:[ 'main.js', 'polyfill.js', 'hello.js' ]
+    })
+  })
+})
+
 describe('WebpackBuilder.prototype.extend()', () => {
   test('success', () => {
     const builder = new WebpackBuilder()
