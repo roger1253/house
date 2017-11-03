@@ -116,6 +116,27 @@ class WebpackBuilder {
 
     return this
   }
+
+  /**
+   * Push plugin to webpack.module.plugins
+   * @param  {*} plugin
+   * @return {this}
+   */
+  addPlugin (plugin) {
+    this.webpack.plugins.push(plugin)
+    return this
+  }
+
+  /**
+   * Concat plugins to webpack.module.plugins
+   * @param  {Array} plugins
+   * @return {this}
+   */
+  addPlugins (plugins) {
+    this.webpack.plugins = this.
+      webpack.plugins.concat(plugins)
+    return this
+  }
 }
 
 module.exports = WebpackBuilder

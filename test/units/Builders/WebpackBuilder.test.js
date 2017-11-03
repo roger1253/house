@@ -161,3 +161,25 @@ describe('WebpackBuilder.prototype.removeRuleById()', () => {
     }).toThrowError('Can\'t find "human" rule')
   })
 })
+
+describe('WebpackBuilder.prototype.addPlugin()', () => {
+  test('addPlugin', () => {
+    const builder = new WebpackBuilder()
+    const expected = jest.fn()
+
+    builder.addPlugin(expected)
+    const webpack = builder.create()
+    expect(webpack.plugins).toEqual(expect.arrayContaining([expected]))
+  })
+})
+
+describe('WebpackBuilder.prototype.addPlugins()', () => {
+  test('addPlugins', () => {
+    const builder = new WebpackBuilder()
+    const expected = [ jest.fn(), jest.fn() ]
+
+    builder.addPlugins(expected)
+    const webpack = builder.create()
+    expect(webpack.plugins).toEqual(expect.arrayContaining(expected))
+  })
+})
