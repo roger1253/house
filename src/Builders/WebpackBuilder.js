@@ -1,0 +1,114 @@
+const defaultsDeep = require('lodash/defaultsDeep')
+const defaults = require('lodash/defaults')
+/**
+ * 仅负责 webpack config 的存储，设置和输出
+ *
+ * @class
+ */
+class WebpackBuilder {
+  constructor () {
+    this.webpack = {
+      entry: {},
+      output: {},
+      resolve: {
+        extensions: []
+      },
+      module: {
+        rules: []
+      },
+      plugins: []
+    }
+  }
+
+  extend (callback) {
+    return callback.call(this, this)  // Second argument alais is ctx
+  }
+
+  create () {
+    return this.webpack
+  }
+
+  // 合并参数
+  merge (fields) {
+    this.webpack = defaults(this.webpack, fields)
+    return this
+  }
+
+  // 深度合并
+  deepMerge (fields) {
+    this.webpack = defaultsDeep(this.webpack, fields)
+    return this
+  }
+
+  // 高度扩展
+  extend (callback) {
+    this.webpack = callback.call(this, this.webpack)
+    return this
+  }
+
+  /**
+   * Push extension to config.resolve.extensions
+   * @public addExtension
+   * @param {*} extension
+   */
+  addExtension (extension) {
+    this.webpack.resolve.extensions.push(extension)
+    return this
+  }
+
+  /**
+   * Concat extensions to config.resolve.extensions
+   * @public addExtensions
+   * @param {Array} extensions
+   */
+  addExtensions (extensions) {
+    this.webpack.resolve.extensions = this.
+      webpack.resolve.extensions.concat(extensions)
+    return this
+  }
+
+  /**
+   * Push rule to webpack.module.rules
+   * @param  {*} rule
+   * @return {this}
+   */
+  addRule (rule) {
+    this.webpack.module.rules.push(rule)
+    return this
+  }
+
+  /**
+   * Concat rules to webpack.module.rules
+   * @param  {Array} rules
+   * @return {this}
+   */
+  addRules (rules) {
+    this.webpack.module.rules = this.
+      webpack.module.rules.concat(rules)
+    return this
+  }
+
+  /**
+   * Remove rule from webpack.module.rules by rule $id
+   * @param  {String|Number} ruleId
+   * @return {this}
+   */
+  removeRuleById (ruleId) {
+    const rules = this.webpack.module.rules.filter(rule => {
+      return rule.$id === ruleId
+    })
+
+    if (rules.length === 0) {
+      throw new Error(`Can\'t find "${ruleId}" rule`)
+    }
+
+    rules.forEach(rule => {
+      const index = this.webpack.module.rules.indexOf(rule)
+      this.webpack.module.rules.splice(index, 1)
+    })
+
+    return this
+  }
+}
+
+module.exports = WebpackBuilder
