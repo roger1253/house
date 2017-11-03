@@ -106,5 +106,11 @@ module.exports = {
   /**
    * 是否启用 human 的 webpack rule 规则
    */
-  enableHumanRule: true
+  enableHumanRule: true,
+
+  /**
+   * Environment in process.env
+   * @type {Object}
+   */
+  env: {}
 }
