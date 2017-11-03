@@ -1,10 +1,5 @@
 const defaultsDeep = require('lodash/defaultsDeep')
-const defaults = require('lodash/defaults')
-/**
- * 仅负责 webpack config 的存储，设置和输出
- *
- * @class
- */
+
 class WebpackBuilder {
   constructor () {
     this.webpack = {
@@ -26,7 +21,7 @@ class WebpackBuilder {
 
   // 合并参数
   merge (fields) {
-    this.webpack = defaults(this.webpack, fields)
+    this.webpack = Object.assign({}, this.webpack, fields)
     return this
   }
 

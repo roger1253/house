@@ -8,7 +8,7 @@ describe('WebpackBuilder.prototype.merge()', () => {
         app:[ 'main.js', 'polyfill.js' ]
       }
     })
-    builder.deepMerge({
+    builder.merge({
       entry: {
         app:[ 'main.js' ]
       }
