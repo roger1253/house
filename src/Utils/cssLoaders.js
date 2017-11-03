@@ -70,13 +70,13 @@ module.exports = function (options) {
     scss: generateLoaders([
       'sass',
       // you can need sass-resources-loader for your sass
-      {
-        loader: 'sass-resources-loader',
-        options: {
-          // must choose a scss file
-          resources: options.sassResources
-        }
-      }
+      // {
+      //   loader: 'sass-resources-loader',
+      //   options: {
+      //     // must choose a scss file
+      //     resources: options.sassResources
+      //   }
+      // }
     ]),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
