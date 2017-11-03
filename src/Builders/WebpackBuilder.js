@@ -20,10 +20,6 @@ class WebpackBuilder {
     }
   }
 
-  extend (callback) {
-    return callback.call(this, this)  // Second argument alais is ctx
-  }
-
   create () {
     return this.webpack
   }
@@ -40,9 +36,25 @@ class WebpackBuilder {
     return this
   }
 
-  // 高度扩展
+  /**
+   * Flexible extend webpack config,
+   * @example
+   *   builder.extend(webpack => {
+   *     webpack.entry = {} // some new value
+   *     return webpack     // need return webpack
+   *   })
+   * @param  {Function} callback [description]
+   * @return {[type]}            [description]
+   */
   extend (callback) {
-    this.webpack = callback.call(this, this.webpack)
+    const extendedWebpack = callback.call(this, this.webpack)
+
+    if (typeof extendedWebpack === 'undefined') {
+      throw new Error('You need return a webpack config.')
+    } else if (typeof extendedWebpack !== 'object') {
+      throw new Error('You need return a object webpack config')
+    }
+
     return this
   }
 

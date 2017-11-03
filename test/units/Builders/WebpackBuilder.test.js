@@ -1,5 +1,42 @@
 const WebpackBuilder = require('../../../src/Builders/WebpackBuilder')
 
+describe('WebpackBuilder.prototype.extend()', () => {
+  test('success', () => {
+    const builder = new WebpackBuilder()
+    const expected = { app: 'main.js' }
+
+    builder.extend(webpack => {
+      webpack.entry = expected
+      return webpack
+    })
+
+    const webpack = builder.create()
+    expect(webpack.entry).toEqual(expected)
+  })
+
+  test('throw undefined', () => {
+    const builder = new WebpackBuilder()
+    const expected = { app: 'main.js' }
+
+    expect(() => {
+      builder.extend(webpack => {
+        webpack.entry = expected
+      })
+    }).toThrowError('You need return a webpack config.')
+  })
+
+  test('throw need object value', () => {
+    const builder = new WebpackBuilder()
+    const expected = { app: 'main.js' }
+
+    expect(() => {
+      builder.extend(webpack => {
+        return 'Hi, house.'
+      })
+    }).toThrowError('You need return a object webpack config')
+  })
+})
+
 describe('WebpackBuilder.prototype.addExtension()', () => {
   const builder = new WebpackBuilder()
 
