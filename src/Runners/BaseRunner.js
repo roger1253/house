@@ -38,7 +38,8 @@ class BaseRunner {
       this.use(require('../Rules/vueRule')),
       this.use(require('../Rules/babelRule')),
       this.use(require('../Rules/imageRule')),
-      this.use(require('../Rules/fontRule'))
+      this.use(require('../Rules/fontRule')),
+      ...this.use(require('../Rules/styleRules'))
     ])
 
     if (this.options.enableHumanRule) {
