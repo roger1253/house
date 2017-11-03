@@ -1,7 +1,6 @@
 const path = require('path')
 const WebpackBuilder = require('../Builders/WebpackBuilder')
 const defaultOptions = require('./defaultOptions')
-const humanRule = require('../Rules/human')
 
 class BaseRunner {
   /**
@@ -33,7 +32,18 @@ class BaseRunner {
     }})
 
     this.webpackBuilder.addExtensions(['.js', '.vue', '.json'])
-    this.webpackBuilder.addRule(this.use(humanRule))
+
+    this.webpackBuilder.addRules([
+      this.use(require('../Rules/eslintRule')),
+      this.use(require('../Rules/vueRule')),
+      this.use(require('../Rules/babelRule')),
+      this.use(require('../Rules/imageRule')),
+      this.use(require('../Rules/fontRule'))
+    ])
+
+    if (this.options.enableHumanRule) {
+      this.webpackBuilder.addRule(this.use(require('../Rules/humanRule')))
+    }
   }
 
   /**
