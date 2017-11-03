@@ -16,7 +16,12 @@ class DevelopmentRunner extends BaseRunner {
       devtool: '#cheap-module-eval-source-map'
     })
 
-    this.webpackBuilder.addPlugin(this.use(require('../Plugins/WebpackHotModuleReplacementPlugin')))
+    this.webpackBuilder.addPlugins([
+      this.use(require('../Plugins/webpackHotPlugin')),
+      this.use(require('../Plugins/webpackNoEmitPlugin')),
+      this.use(require('../Plugins/htmlPlugin')),
+      this.use(require('../Plugins/FriendlyErrorsPlugin'))
+    ])
   }
 
   run () {
