@@ -1,6 +1,5 @@
 module.exports = runner => {
   return {
-    $id: 'eslint',
     test: /\.(js|vue)$/,
     loader: 'eslint-loader',
     enforce: 'pre',

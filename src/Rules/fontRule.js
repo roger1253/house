@@ -3,7 +3,6 @@ module.exports = runner => {
     runner.options.assetsSubDirectory, 'fonts/[name].[hash:7].[ext]')
 
   return {
-    $id: 'font',
     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
     loader: 'url-loader',
     options: {

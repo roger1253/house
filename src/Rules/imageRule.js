@@ -3,7 +3,6 @@ module.exports = runner => {
     runner.options.assetsSubDirectory, 'img/[name].[hash:7].[ext]')
 
   return {
-    $id: 'image',
     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
     loader: 'url-loader',
     options: {
