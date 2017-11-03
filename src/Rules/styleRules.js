@@ -1,4 +1,4 @@
-const cssLoader = require('../Utils/cssLoader')
+const cssLoaders = require('../Utils/cssLoaders')
 
 module.exports = runner => {
   const output = []

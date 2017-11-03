@@ -1,4 +1,4 @@
-const cssLoader = require('../Utils/cssLoaders')
+const cssLoaders = require('../Utils/cssLoaders')
 
 module.exports = runner => {
   return {
@@ -6,7 +6,7 @@ module.exports = runner => {
     test: /\.vue$/,
     loader: 'vue-loader',
     options: {
-      loaders: cssLoader(runner.options)
+      loaders: cssLoaders(runner.options)
     }
   }
 }
