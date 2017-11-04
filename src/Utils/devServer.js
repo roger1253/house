@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 const webpackCli = require('webpack')
 const proxyMiddleware = require('http-proxy-middleware')
@@ -5,12 +6,9 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const connectHistoryApiFallback = require('connect-history-api-fallback')
 
-module.exports = runner => {
+module.exports = ({ webpack, port, proxyTable, assetsPublicPath, assetsSubDirectory }) => {
   const app = express()
-  const webpack = runner.webpackBuilder.create()
   const compiler = webpackCli(webpack)
-  const port = runner.options.port
-  const proxyTable = runner.options.proxyTable
 
   const devMiddleware = webpackDevMiddleware(compiler, {
     publicPath: webpack.output.publicPath,
@@ -49,8 +47,7 @@ module.exports = runner => {
   app.use(hotMiddleware)
 
   // serve pure static assets
-  const staticPath = runner.path.posix.join(
-    runner.options.assetsPublicPath, runner.options.assetsSubDirectory)
+  const staticPath = path.posix.join(assetsPublicPath, assetsSubDirectory)
   app.use(staticPath, express.static('./static'))
 
   const uri = 'http://localhost:' + port

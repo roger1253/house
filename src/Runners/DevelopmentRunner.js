@@ -46,7 +46,13 @@ class DevelopmentRunner extends BaseRunner {
    * @return {Object}
    */
   run () {
-    return this.use(require('../Middlewares/developmentMiddleware'))
+    return require('../Utils/devServer').call(this, {
+      webpack: this.webpackBuilder.create(),
+      port: this.options.port,
+      proxyTable: this.options.proxyTable,
+      assetsPublicPath: this.options.assetsPublicPath,
+      assetsSubDirectory: this.options.assetsSubDirectory
+    })
   }
 }
 
