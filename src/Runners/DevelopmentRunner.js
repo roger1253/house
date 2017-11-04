@@ -1,6 +1,20 @@
 const BaseRunner = require('./BaseRunner')
 
 class DevelopmentRunner extends BaseRunner {
+  /**
+   * @constructor
+   */
+  constructor (...args) {
+    super(...args)
+    this.setDevelopmentWebpack()
+  }
+
+  /**
+   * Extend development webpack config
+   *
+   * @public setDevelopmentWebpack
+   * @return {this}
+   */
   setDevelopmentWebpack () {
     // Extend webpack.entry.app, add webpack-hot-middleware file
     this.webpackBuilder.extend(webpack => {
@@ -21,10 +35,17 @@ class DevelopmentRunner extends BaseRunner {
       this.use(require('../Plugins/htmlPlugin')),
       this.use(require('../Plugins/FriendlyErrorsPlugin'))
     ])
+
+    return this
   }
 
+  /**
+   * Run runner
+   *
+   * @public run
+   * @return {Object}
+   */
   run () {
-    this.setDevelopmentWebpack()
     return this.use(require('../Middlewares/developmentMiddleware'))
   }
 }
