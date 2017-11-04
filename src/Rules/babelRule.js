@@ -6,10 +6,6 @@ module.exports = runner => {
       runner.path.join(runner.options.appPath),
       runner.path.join(runner.options.testPath)
     ],
-    options: {
-      presets: [ 'es2015', 'stage-2' ],
-      plugins: ['transform-runtime'],
-      comments: false
-    }
+    options: require('./babelOptions')
   }
 }
