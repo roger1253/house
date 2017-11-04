@@ -25,7 +25,7 @@ class DevelopmentRunner extends BaseRunner {
 
   run () {
     this.setDevelopmentWebpack()
-    return this.use(require('../Middlewares/Server'))
+    return this.use(require('../Middlewares/DevelopmentMiddleware'))
   }
 }
 
