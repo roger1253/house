@@ -2,114 +2,115 @@ const path = require('path')
 
 module.exports = {
   /**
-   * 入口文件的名称
+   * webpack entry name
    * @type {String}
    */
   entryName: 'main.js',
 
   /**
-   * webpack 转化的 app 的目录
+   * webpack app project path
    * @type {String}
    */
   appPath: path.join(process.cwd(), 'src'),
 
   /**
-   * 项目根目录
+   * project root path
    * @type {String}
    */
   rootPath: path.join(process.cwd()),
 
   /**
-   * 测试目录
+   * test path
    * @type {String}
    */
   testPath: path.join(process.cwd(), 'test'),
 
   /**
-   * 预先加载的 sass 资源
+   * sass resources
    * @type {String|Array}
    */
   sassResources: undefined,
 
   /**
-   * html 模版所在位置
+   * html index.html file path
    * @type {String}
    */
   templateIndex: path.join(process.cwd(), 'index.html'),
 
   /**
-   * 静态资源生成的目录
+   * build dist path
    * @type {String}
    */
   assetsRoot: path.join(process.cwd(), 'dist'),
 
   /**
-   * 静态资源子目录
+   * dist/static
    * @type {String}
    */
   assetsSubDirectory: 'static',
 
   /**
-   * 地址栏路径
+   * url root path
    * @type {String}
    */
   assetsPublicPath: '/',
 
   /**
-   * 映射表
+   * proxy map table
+   * @see https://github.com/chimurai/http-proxy-middleware
    * @type {Object}
    */
   proxyTable: {},
 
   /**
-   * 端口号
+   * http port
    * @type {Number}
    */
   port: process.env.PORT || 8080,
 
   /**
-   * css 的 sourceMap
+   * enable css sourceMap
    * @type {Boolean}
    */
   cssSourceMap: true,
 
   /**
-   * css 是否压缩
+   * enable minize css
    * @type {Boolean}
    */
   cssMinimize: false,
 
   /**
-   * css 是否单独放入某个文件
+   * sperate css in single .css file
    * @type {Boolean}
    */
   cssExtract: false,
 
   /**
-   * 生产环境是否开启 gzip
+   * enable production gzip
    * @type {Boolean}
    */
   productionGzip: false,
 
   /**
-   * 生产环境 Gzip 的扩展名
+   * production gzip extensions
    * @type {Array}
    */
   productionGzipExtensions: ['js', 'css'],
 
   /**
-   * 是否提交统计报表
+   * analyzer report
    * @type {Boolean}
    */
   bundleAnalyzerReport: process.env.npm_config_report,
 
   /**
-   * 是否启用 human 的 webpack rule 规则
+   * enable human rule
    */
   enableHumanRule: true,
 
   /**
-   * Environment in process.env
+   * environment in process.env
    * @type {Object}
    */
   env: {}
