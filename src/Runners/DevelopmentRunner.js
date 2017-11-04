@@ -28,7 +28,6 @@ class DevelopmentRunner extends BaseRunner {
 
   run () {
     this.setDevelopmentWebpack()
-    console.log(this.webpackBuilder.webpack)
     const webpack = this.webpackBuilder.create()
 
     const app = express()
