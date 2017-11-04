@@ -4,6 +4,7 @@
   "description": "House for developing and using freshes components.",
   "main": "index.js",
   "scripts": {
+    "start": "node ./scripts/development.js",
     "test": "jest"
   },
   "author": "Wu Qi Cheng <wu.qicheng@vitualreaty.com>",
