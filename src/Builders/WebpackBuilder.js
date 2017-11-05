@@ -25,12 +25,6 @@ class WebpackBuilder {
     return this
   }
 
-  // 深度合并
-  deepMerge (fields) {
-    this.webpack = defaultsDeep(this.webpack, fields)
-    return this
-  }
-
   /**
    * Flexible extend webpack config,
    * @example
