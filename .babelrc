@@ -22,5 +22,20 @@
     "stage-2"
   ],
   "plugins": ["transform-runtime"],
-  "comments": false
+  "comments": false,
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "8.9.0"
+            }
+          }
+        ]
+      ],
+      "comments": true
+    }
+  }
 }
