@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./scripts/development.js",
     "build": "node ./scripts/production.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --no-ignore scripts src"
   },
   "author": "Wu Qi Cheng <wu.qicheng@vitualreaty.com>",
   "license": "MIT",
