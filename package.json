@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./scripts/development.js",
+    "build": "node ./scripts/production.js",
     "test": "jest"
   },
   "author": "Wu Qi Cheng <wu.qicheng@vitualreaty.com>",
