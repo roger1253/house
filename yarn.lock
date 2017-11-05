@@ -269,6 +269,13 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
+axios@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
+  dependencies:
+    follow-redirects "^1.2.3"
+    is-buffer "^1.1.5"
+
 axios@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.0.tgz#7da747916db803f761651d6091d708789b953c6a"
@@ -5330,6 +5337,17 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+strawes@~0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/strawes/-/strawes-0.1.4.tgz#edebe9701f9f608586b1e7ca742d8fb799a29849"
+  dependencies:
+    axios "^0.16.2"
+    vue "^2.3.4"
+    vue-human "^2.6.11"
+    vue-human-env "^2.0.2"
+    vue-router "^2.7.0"
+    vuex "^2.3.1"
+
 stream-browserify@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.1.tgz#66266ee5f9bdb9940a4e4514cafb43bb71e5c9db"
@@ -5740,13 +5758,19 @@ vue-hot-reload-api@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
 
+vue-human-env@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vue-human-env/-/vue-human-env-2.0.2.tgz#1fd4015ecbadcb1b444b67c4ae4bc27d76e5dcc3"
+  dependencies:
+    vue "^2.0.1"
+
 vue-human-icons@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/vue-human-icons/-/vue-human-icons-1.4.0.tgz#e3fd023207474d0adc6898ddf55eb491b7839582"
 
-vue-human@~2.7.0:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/vue-human/-/vue-human-2.7.2.tgz#01c17467d98214f230b89b8de78c1aca9d7b26c1"
+vue-human@^2.6.11, vue-human@~2.7.0:
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/vue-human/-/vue-human-2.7.3.tgz#47673f0e564e60ebc9a6128d9dab1df36f4d9629"
   dependencies:
     lodash "^4.17.4"
     node-sass "^4.5.3"
@@ -5778,6 +5802,10 @@ vue-loader@~13.4.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-router@^2.7.0:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.8.1.tgz#9833c9ee57ac83beb0269056fefee71713f20695"
+
 vue-router@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
@@ -5800,13 +5828,17 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue@^2.3.3, vue@~2.5.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.2.tgz#fd367a87bae7535e47f9dc5c9ec3b496e5feb5a4"
+vue@^2.0.1, vue@^2.3.3, vue@^2.3.4, vue@~2.5.0:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.3.tgz#e1a3b1f49b6e93e574ce040b95cbc873912fecc1"
 
 vuelidate@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.5.0.tgz#c315659a023e760d0fb11b6b42b6c3cdf08306c3"
+
+vuex@^2.3.1:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.5.0.tgz#20f0265ade6c9a5ac6724a405d3ffdb4726c9741"
 
 vuex@~3.0.0:
   version "3.0.1"
