@@ -1,8 +1,6 @@
-var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = function (options) {
-
   var cssLoader = {
     loader: 'css-loader',
     options: {
@@ -68,7 +66,7 @@ module.exports = function (options) {
       }
     ]),
     scss: generateLoaders([
-      'sass',
+      'sass'
       // you can need sass-resources-loader for your sass
       // {
       //   loader: 'sass-resources-loader',
