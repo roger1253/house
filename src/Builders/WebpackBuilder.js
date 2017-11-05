@@ -1,6 +1,7 @@
-const defaultsDeep = require('lodash/defaultsDeep')
-
 class WebpackBuilder {
+  /**
+   * @constructor
+   */
   constructor () {
     this.webpack = {
       entry: {},
@@ -15,11 +16,21 @@ class WebpackBuilder {
     }
   }
 
+  /**
+   * Create webpack config object
+   * @public create
+   * @return {Object} webpack config
+   */
   create () {
     return this.webpack
   }
 
-  // 合并参数
+  /**
+   * Merge fields to webpack
+   * @public merge
+   * @param  {Object} fields
+   * @return {this}
+   */
   merge (fields) {
     this.webpack = Object.assign({}, this.webpack, fields)
     return this
