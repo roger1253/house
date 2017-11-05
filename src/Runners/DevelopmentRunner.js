@@ -30,10 +30,10 @@ class DevelopmentRunner extends BaseRunner {
     })
 
     this.webpackBuilder.addPlugins([
-      this.use(require('../Plugins/webpackHotPlugin')),
-      this.use(require('../Plugins/webpackNoEmitPlugin')),
-      this.use(require('../Plugins/htmlPlugin')),
-      this.use(require('../Plugins/FriendlyErrorsPlugin'))
+      this.use(require('../Plugins/Developments/hotModulePlugin')),
+      this.use(require('../Plugins/Developments/noEmitOnErrorsPlugin')),
+      this.use(require('../Plugins/Developments/htmlWebpackPlugin')),
+      this.use(require('../Plugins/Developments/FriendlyErrorsPlugin'))
     ])
 
     return this

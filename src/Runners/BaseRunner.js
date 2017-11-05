@@ -46,7 +46,7 @@ class BaseRunner {
       this.webpackBuilder.addRule(this.use(require('../Rules/humanRule')))
     }
 
-    this.webpackBuilder.addPlugin(this.use(require('../Plugins/WebpackDefinePlugin')))
+    this.webpackBuilder.addPlugin(this.use(require('../Plugins/definePlugin')))
   }
 
   /**
