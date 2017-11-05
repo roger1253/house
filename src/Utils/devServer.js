@@ -5,6 +5,7 @@ const proxyMiddleware = require('http-proxy-middleware')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const connectHistoryApiFallback = require('connect-history-api-fallback')
+const chalk = require('chalk')
 
 module.exports = ({ webpack, port, proxyTable, assetsPublicPath, assetsSubDirectory }) => {
   const app = express()
@@ -57,9 +58,10 @@ module.exports = ({ webpack, port, proxyTable, assetsPublicPath, assetsSubDirect
     _resolve = resolve
   })
 
-  console.log('> Starting dev server...')
+  // console.log('> Starting dev server...')
+  console.log(chalk.yellow('Hello, I\'am Fresh house. The development server is starting.'))
   devMiddleware.waitUntilValid(() => {
-    console.log('> Listening at ' + uri + '\n')
+    console.log(chalk.yellow(`I are ready. open ${uri} to see me.`))
     _resolve()
   })
 
