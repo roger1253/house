@@ -2,13 +2,26 @@
   "name": "@freshes/house",
   "version": "0.1.0",
   "description": "House for developing and using freshes components.",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HumanUI/house.git"
+  },
+  "keywords": [
+    "vue",
+    "javascript",
+    "components",
+    "freshes"
+  ],
   "scripts": {
     "start": "node ./scripts/development.js",
+    "dev": "node ./scripts/development.js",
     "build": "node ./scripts/production.js",
     "test": "jest",
     "lint": "eslint --no-ignore scripts src"
   },
+  "files": [
+    "src"
+  ],
   "author": "Wu Qi Cheng <wu.qicheng@vitualreaty.com>",
   "license": "MIT",
   "devDependencies": {
@@ -66,5 +79,9 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.20.0"
+  },
+  "engines": {
+    "node": "^8.9.0",
+    "npm": "^5.5.0"
   }
 }
