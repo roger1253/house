@@ -7,7 +7,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 const connectHistoryApiFallback = require('connect-history-api-fallback')
 const chalk = require('chalk')
 
-module.exports = ({ webpack, port, proxyTable, assetsPublicPath, assetsSubDirectory }) => {
+module.exports = ({ webpack, port, proxyTable, staticPath, assetsPublicPath, assetsSubDirectory }) => {
   const app = express()
   const compiler = webpackCli(webpack)
 
@@ -49,7 +49,7 @@ module.exports = ({ webpack, port, proxyTable, assetsPublicPath, assetsSubDirect
 
   // serve pure static assets
   const staticPath = path.posix.join(assetsPublicPath, assetsSubDirectory)
-  app.use(staticPath, express.static('./static'))
+  app.use(staticPath, express.static(staticPath))
 
   const uri = 'http://localhost:' + port
 

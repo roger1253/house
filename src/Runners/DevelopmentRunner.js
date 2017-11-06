@@ -50,6 +50,7 @@ class DevelopmentRunner extends BaseRunner {
       webpack: this.webpackBuilder.create(),
       port: this.options.port,
       proxyTable: this.options.proxyTable,
+      staticPath: this.options.staticPath,
       assetsPublicPath: this.options.assetsPublicPath,
       assetsSubDirectory: this.options.assetsSubDirectory
     })

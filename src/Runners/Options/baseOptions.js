@@ -26,6 +26,12 @@ module.exports = {
   testPath: path.join(process.cwd(), 'test'),
 
   /**
+   * static path
+   * @type {String}
+   */
+  staticPath: path.join(process.cwd(), 'static'),
+
+  /**
    * sass resources
    * @type {String|Array}
    */
