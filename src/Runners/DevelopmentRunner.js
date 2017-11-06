@@ -39,6 +39,10 @@ class DevelopmentRunner extends BaseRunner {
     return this
   }
 
+  setExpress () {
+    this.use(require('./Helpers/expressHotServer'))
+  }
+
   /**
    * Run runner
    *
@@ -46,14 +50,8 @@ class DevelopmentRunner extends BaseRunner {
    * @return {Object}
    */
   run () {
-    return require('../Utils/devServer').call(this, {
-      webpack: this.webpackBuilder.create(),
-      port: this.options.port,
-      proxyTable: this.options.proxyTable,
-      staticPath: this.options.staticPath,
-      assetsPublicPath: this.options.assetsPublicPath,
-      assetsSubDirectory: this.options.assetsSubDirectory
-    })
+    this.setExpress()
+    this.expressBuilder.listen(this.options.port)
   }
 }
 

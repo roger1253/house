@@ -3,7 +3,7 @@ const chalk = require('chalk')
 const connectHistoryApiFallback = require('connect-history-api-fallback')
 const BaseRunner = require('./BaseRunner')
 const ExpressBuilder = require('../Builders/ExpressBuilder')
-const useExpressProxy = require('../Utils/useExpressProxy')
+const useExpressProxy = require('./Helpers/useExpressProxy')
 
 class PresetationRunner extends BaseRunner {
   /**
