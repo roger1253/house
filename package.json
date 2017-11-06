@@ -13,9 +13,9 @@
     "freshes"
   ],
   "scripts": {
-    "start": "node ./scripts/development.js",
-    "dev": "node ./scripts/development.js",
-    "build": "node ./scripts/production.js",
+    "start": "node ./example/scripts/development.js",
+    "dev": "node ./example/scripts/development.js",
+    "build": "node ./example/scripts/production.js",
     "test": "jest",
     "lint": "eslint --no-ignore scripts src"
   },
