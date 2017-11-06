@@ -48,8 +48,8 @@ module.exports = ({ webpack, port, proxyTable, staticPath, assetsPublicPath, ass
   app.use(hotMiddleware)
 
   // serve pure static assets
-  const staticPath = path.posix.join(assetsPublicPath, assetsSubDirectory)
-  app.use(staticPath, express.static(staticPath))
+  const assetsStaticPath = path.posix.join(assetsPublicPath, assetsSubDirectory)
+  app.use(assetsStaticPath, express.static(staticPath))
 
   const uri = 'http://localhost:' + port
 
