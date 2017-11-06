@@ -5,8 +5,8 @@ module.exports = runner => {
 
   Object.keys(runner.options.env).forEach(name => {
     defines[`process.env.${name}`] = process.env.hasOwnProperty(name)
-      ? process.env[name]
-      : runner.options.env[name]
+      ? JSON.stringify(process.env[name])
+      : JSON.stringify(runner.options.env[name])
   })
 
   return new webpack.DefinePlugin(defines)
