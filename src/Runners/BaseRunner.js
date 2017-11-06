@@ -1,6 +1,6 @@
 const path = require('path')
 const WebpackBuilder = require('../Builders/WebpackBuilder')
-const defaultOptions = require('./defaultOptions')
+const baseOptions = require('./Options/baseOptions')
 
 class BaseRunner {
   /**
@@ -10,7 +10,7 @@ class BaseRunner {
    */
   constructor (options) {
     this.path = path
-    this.options = Object.assign({}, defaultOptions, options)
+    this.options = Object.assign({}, baseOptions, options)
     this.webpackBuilder = new WebpackBuilder()
     this.setBaseWebpack()
   }

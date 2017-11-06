@@ -1,11 +1,13 @@
 const BaseRunner = require('./BaseRunner')
+const productionOptions = require('./Options/productionOptions')
 
 class ProductionRunner extends BaseRunner {
   /**
    * @constructor
    */
-  constructor (...args) {
-    super(...args)
+  constructor (options, ...args) {
+    options = Object.assign({}, productionOptions, options)
+    super(options, ...args)
     this.setProductionWebpack()
   }
 
