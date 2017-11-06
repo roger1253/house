@@ -5,7 +5,7 @@ module.exports = function (options) {
     loader: 'css-loader',
     options: {
       minimize: options.cssMinimize,
-      sourceMap: options.sourceMap
+      sourceMap: options.cssSourceMap
     }
   }
 
@@ -27,7 +27,7 @@ module.exports = function (options) {
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
-    if (options.extract) {
+    if (options.cssExtract) {
       return ExtractTextPlugin.extract({
         use: loaders,
         fallback: 'vue-style-loader'
@@ -43,7 +43,7 @@ module.exports = function (options) {
       return {
         loader: loader + '-loader',
         options: {
-          sourceMap: options.sourceMap
+          sourceMap: options.cssSourceMap
         }
       }
     } else if (typeof loader === 'object' && loader.constructor === Object) {
@@ -60,7 +60,7 @@ module.exports = function (options) {
       {
         loader: 'sass-loader',
         options: {
-          sourceMap: options.sourceMap,
+          sourceMap: options.cssSourceMap,
           indentedSyntax: true
         }
       }
