@@ -7,7 +7,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 const connectHistoryApiFallback = require('connect-history-api-fallback')
 const chalk = require('chalk')
 const useExpressProxy = require('./useExpressProxy')
-
+const welcome = require('./welcome')
 module.exports = runner => {
   runner.expressBuilder = new ExpressBuilder()
   runner.expressBuilder.listeningMessage = chalk.yellow(
@@ -23,7 +23,7 @@ module.exports = runner => {
     })
 
     const hotMiddleware = webpackHotMiddleware(compiler, {
-      log: () => {}
+      log: () => { }
     })
 
     // force page reload when html-webpack-plugin template changes
@@ -53,6 +53,9 @@ module.exports = runner => {
 
     devMiddleware.waitUntilValid(() => {
       console.log(chalk.yellow(`I are ready. open http://localhost:${runner.options.port} to see me.`))
+      welcome.forEach(item => {
+        console.log(chalk.yellow(item))
+      })
     })
   })
 }
